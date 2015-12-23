@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>在Gradle中隐藏Keystore密码 | Drubear的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="转载请注明原作者，如果你觉得这篇文章对你有帮助或启发，不用请我喝咖啡:D
+1.添加releaseConfig123456789signingConfigs&amp;#123;        releaseConfig&amp;#123;            storeFile file(&quot;mykey.keystore.jks&quot;)            storePassword &quot;storepwd&quot;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在Gradle中隐藏Keystore密码">
+<meta property="og:url" content="http://yoursite.com/2015/12/23/在Gradle中隐藏Keystore密码/index.html">
+<meta property="og:site_name" content="Drubear的博客">
+<meta property="og:description" content="转载请注明原作者，如果你觉得这篇文章对你有帮助或启发，不用请我喝咖啡:D
+1.添加releaseConfig123456789signingConfigs&amp;#123;        releaseConfig&amp;#123;            storeFile file(&quot;mykey.keystore.jks&quot;)            storePassword &quot;storepwd&quot;">
+<meta property="og:updated_time" content="2015-12-23T06:34:58.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="在Gradle中隐藏Keystore密码">
+<meta name="twitter:description" content="转载请注明原作者，如果你觉得这篇文章对你有帮助或启发，不用请我喝咖啡:D
+1.添加releaseConfig123456789signingConfigs&amp;#123;        releaseConfig&amp;#123;            storeFile file(&quot;mykey.keystore.jks&quot;)            storePassword &quot;storepwd&quot;">
+  
+    <link rel="alternative" href="/atom.xml" title="Drubear的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/img/headportrait.jpeg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Drubear</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">德鲁熊通往星辰大海的道路</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>標籤</li>
+						
+						<li>友情链接</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/drubear" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/drubear" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">奥巴马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">卡卡的美丽传说</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">本泽马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">吉格斯的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">习大大大不同</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">托蒂的博客</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Drubear</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="/img/headportrait.jpeg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Drubear</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">德鲁熊通往星辰大海的道路</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/drubear" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/drubear" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-在Gradle中隐藏Keystore密码" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/12/23/在Gradle中隐藏Keystore密码/" class="article-date">
+  	<time datetime="2015-12-23T06:19:59.000Z" itemprop="datePublished">2015-12-23</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      在Gradle中隐藏Keystore密码
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>转载请注明原作者，如果你觉得这篇文章对你有帮助或启发，不用请我喝咖啡:D</strong></p>
+<h2 id="1-_u6DFB_u52A0releaseConfig"><a href="#1-_u6DFB_u52A0releaseConfig" class="headerlink" title="1.添加releaseConfig"></a>1.添加releaseConfig</h2><figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">signingConfigs&#123;</span><br><span class="line">        releaseConfig&#123;</span><br><span class="line">            storeFile file(<span class="string">"mykey.keystore.jks"</span>)</span><br><span class="line">            storePassword <span class="string">"storepwd"</span></span><br><span class="line">            keyAlias <span class="string">"MyApp"</span></span><br><span class="line">            keyPassword <span class="string">"mypwd"</span></span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="2-_u6307_u5411releaseConfig"><a href="#2-_u6307_u5411releaseConfig" class="headerlink" title="2.指向releaseConfig"></a>2.指向releaseConfig</h2><p>在buildTypes中，release部分，添加sighingConfig 指向releaseConfig<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">buildTypes</span> &#123;</span><br><span class="line">        <span class="title">release</span> &#123;</span><br><span class="line">            <span class="title">minifyEnabled</span> <span class="built_in">false</span></span><br><span class="line">            shrinkResources <span class="built_in">true</span></span><br><span class="line">            proguardFiles getDefaultProguardFile(<span class="string">'proguard-android.txt'</span>), <span class="string">'proguard-rules.pro'</span></span><br><span class="line">            signingConfig signingConfigs.releaseConfig</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="3-__u9690_u85CF_u7528_u6237_u540D"><a href="#3-__u9690_u85CF_u7528_u6237_u540D" class="headerlink" title="3. 隐藏用户名"></a>3. 隐藏用户名</h2><p>不想暴露用户名，修改步骤1中的storePassword和keyPassword为<br><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">signingConfigs&#123;</span><br><span class="line">        releaseConfig&#123;</span><br><span class="line">            storeFile file(<span class="string">"hnt.keystore.jks"</span>)</span><br><span class="line">            storePassword System.<span class="built_in">console</span>().readLine(<span class="string">"\nKeyStore password: "</span>)</span><br><span class="line">            keyAlias <span class="string">"HaniuTang"</span></span><br><span class="line">            keyPassword System.<span class="built_in">console</span>().readLine(<span class="string">"\nKey password: "</span>)</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>这样使用命令行进行打包（assembleRelease命令）会让你输入用户名。</p>
+<h2 id="4-_u9047_u5230_u7684_u95EE_u9898_u53CA_u89E3_u51B3"><a href="#4-_u9047_u5230_u7684_u95EE_u9898_u53CA_u89E3_u51B3" class="headerlink" title="4.遇到的问题及解决"></a>4.遇到的问题及解决</h2><p>设置apk签名时从console中读取keyAlias以及密码，使用”system.console().readLine”方法，在编译时总是出现问题：<br><figure class="highlight oxygene"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Cannot invoke <span class="function"><span class="keyword">method</span> <span class="title">readLine</span><span class="params">()</span> <span class="title">on</span> <span class="title">null</span> <span class="title">object</span>"</span></span><br></pre></td></tr></table></figure></p>
+<p>使用命令行的时候没有问题，但是当使用android studio的时候，还是报这个错，可能是android studio默认设置gradle为deamon方式。</p>
+<ul>
+<li><p>方法1：去除优化gradle设置的./gradle/gradle.properties中的damon为true。</p>
+<blockquote>
+<p>Reference:<br><a href="http://forums.gradle.org/gradle/topics/standard_in_when_using_the_daemon" target="_blank" rel="external">http://forums.gradle.org/gradle/topics/standard_in_when_using_the_daemon</a></p>
+</blockquote>
+</li>
+<li><p>方法2：加上</p>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(system.<span class="built_in">console</span>() != <span class="literal">null</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>这之后再从命令行读取密码以及别名</p>
+<blockquote>
+<p>Reference：<br><a href="https://www.timroes.de/2013/09/22/handling-signing-configs-with-gradle/" target="_blank" rel="external">https://www.timroes.de/2013/09/22/handling-signing-configs-with-gradle/</a></p>
+</blockquote>
+<h2 id="5-_u6700_u7EC8_u811A_u672C"><a href="#5-_u6700_u7EC8_u811A_u672C" class="headerlink" title="5.最终脚本"></a>5.最终脚本</h2><p>最终，gradle脚本中的相关部分长这样：<br><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">signingConfigs&#123;</span><br><span class="line">        releaseConfig&#123;</span><br><span class="line">            storeFile file(<span class="string">"mykey.keystore.jks"</span>)</span><br><span class="line">            storePassword</span><br><span class="line">            <span class="keyword">if</span>(System.<span class="built_in">console</span>() != <span class="literal">null</span>)</span><br><span class="line">                System.<span class="built_in">console</span>().readLine(<span class="string">"\nKeystore password: "</span>)</span><br><span class="line">            keyAlias <span class="string">"MyApp"</span></span><br><span class="line">            keyPassword</span><br><span class="line">            <span class="keyword">if</span>(System.<span class="built_in">console</span>() != <span class="literal">null</span>)</span><br><span class="line">                System.<span class="built_in">console</span>().readLine(<span class="string">"\nKey password: "</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/12/22/Mac-OS-X安装Node-js、npm/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Mac OS X安装Node.js、npm</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="在Gradle中隐藏Keystore密码" data-title="在Gradle中隐藏Keystore密码" data-url="http://yoursite.com/2015/12/23/在Gradle中隐藏Keystore密码/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Drubear
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
