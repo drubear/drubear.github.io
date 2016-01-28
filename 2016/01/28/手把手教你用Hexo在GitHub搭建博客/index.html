@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>手把手教你用Hexo在GitHub搭建博客 | Drubear的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="转载请注明出处，如果觉得有用，不用请我喝咖啡:D
+这篇文章，写给希望使用Hexo在Github上搭建起个人博客的你，同样适合像 Lucien 一样不是程序猿的同学:D
+1.前置准备
+Node.js环境和npm
+git环境
+一点点Markdown基础
+一点点git基础
+命令行工具，如Terminal、GitBash
+github帐号，如果要将你的hexo博客免费部署到github上，类似我的博客 -">
+<meta property="og:type" content="article">
+<meta property="og:title" content="手把手教你用Hexo在GitHub搭建博客">
+<meta property="og:url" content="http://yoursite.com/2016/01/28/手把手教你用Hexo在GitHub搭建博客/index.html">
+<meta property="og:site_name" content="Drubear的博客">
+<meta property="og:description" content="转载请注明出处，如果觉得有用，不用请我喝咖啡:D
+这篇文章，写给希望使用Hexo在Github上搭建起个人博客的你，同样适合像 Lucien 一样不是程序猿的同学:D
+1.前置准备
+Node.js环境和npm
+git环境
+一点点Markdown基础
+一点点git基础
+命令行工具，如Terminal、GitBash
+github帐号，如果要将你的hexo博客免费部署到github上，类似我的博客 -">
+<meta property="og:updated_time" content="2016-01-28T03:42:09.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="手把手教你用Hexo在GitHub搭建博客">
+<meta name="twitter:description" content="转载请注明出处，如果觉得有用，不用请我喝咖啡:D
+这篇文章，写给希望使用Hexo在Github上搭建起个人博客的你，同样适合像 Lucien 一样不是程序猿的同学:D
+1.前置准备
+Node.js环境和npm
+git环境
+一点点Markdown基础
+一点点git基础
+命令行工具，如Terminal、GitBash
+github帐号，如果要将你的hexo博客免费部署到github上，类似我的博客 -">
+  
+    <link rel="alternative" href="/atom.xml" title="Drubear的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/img/headportrait.jpeg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Drubear</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">不写代码的音乐家不是一个好科学家</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>標籤</li>
+						
+						<li>友情链接</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/drubear" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/drubear" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/Anroid/" style="font-size: 10px;">Anroid</a> <a href="/tags/Mac/" style="font-size: 20px;">Mac</a> <a href="/tags/MongoDB/" style="font-size: 10px;">MongoDB</a> <a href="/tags/NoSQL/" style="font-size: 10px;">NoSQL</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://icetea.github.io">河马的博客</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Drubear</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="/img/headportrait.jpeg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Drubear</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">不写代码的音乐家不是一个好科学家</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/drubear" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/drubear" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-手把手教你用Hexo在GitHub搭建博客" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/01/28/手把手教你用Hexo在GitHub搭建博客/" class="article-date">
+  	<time datetime="2016-01-28T03:34:45.000Z" itemprop="datePublished">2016-01-28</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      手把手教你用Hexo在GitHub搭建博客
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github/">github</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><em>转载请注明出处，如果觉得有用，不用请我喝咖啡:D</em></p>
+<p>这篇文章，写给希望使用Hexo在Github上搭建起个人博客的你，同样适合像 <strong><em>Lucien</em></strong> 一样不是程序猿的同学:D</p>
+<h2 id="1-_u524D_u7F6E_u51C6_u5907"><a href="#1-_u524D_u7F6E_u51C6_u5907" class="headerlink" title="1.前置准备"></a>1.前置准备</h2><ul>
+<li>Node.js环境和npm</li>
+<li>git环境</li>
+<li>一点点Markdown基础</li>
+<li>一点点git基础</li>
+<li>命令行工具，如Terminal、GitBash</li>
+<li>github帐号，如果要将你的hexo博客免费部署到github上，类似我的博客 - <a href="http://drubear.github.io/" target="_blank" rel="external">德鲁熊的博客</a>的话。</li>
+</ul>
+<a id="more"></a>
+<p>Node.js和npm的安装，Mac下的配置可以从我博客中的<a href="http://drubear.github.io/2015/12/22/Mac-OS-X%E5%AE%89%E8%A3%85Node-js%E3%80%81npm/" target="_blank" rel="external">这篇文章</a>找到。</p>
+<p>git环境是必须的，Mac下安装过Xcode默认配置有git。没有安装过，现装一个也非常简单，参考cocoachina上的<a href="http://www.cocoachina.com/bbs/read.php?tid=200557" target="_blank" rel="external">这篇文章</a>，没有亲测过。</p>
+<p>Markdown，如果是纯文字记录，不会也没有关系，<strong>但是会的话可以让你写出格式更漂亮的日志和文档</strong>。</p>
+<p>至于git，同样也是不会也没有关系，因为在用hexo搭建博客的过程中，使用到的命令来回就那几行。我会把命令都提供出来，如果有需要修改的地方会特别标注，但是如果会的话，理解起来更容易。</p>
+<h2 id="2-_u4F7F_u7528Hexo"><a href="#2-_u4F7F_u7528Hexo" class="headerlink" title="2.使用Hexo"></a>2.使用Hexo</h2><p>我们先来说说基本的配置和本机部署，这章节的操作做完后，你可以通过一个<strong>本机能访问的地址</strong> <a href="http://0.0.0.0:4000/，看到自己的博客是什么模样。" target="_blank" rel="external">http://0.0.0.0:4000/，看到自己的博客是什么模样。</a></p>
+<h3 id="2-1_npm_u5B89_u88C5Hexo"><a href="#2-1_npm_u5B89_u88C5Hexo" class="headerlink" title="2.1 npm安装Hexo"></a>2.1 npm安装Hexo</h3><p>打开命令行工具，执行如下命令：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm <span class="operator"><span class="keyword">install</span> -<span class="keyword">g</span> hexo</span></span><br></pre></td></tr></table></figure></p>
+<p>如果这一步出错，请参考<a href="http://drubear.github.io/2015/12/22/Mac-OS-X%E5%AE%89%E8%A3%85Node-js%E3%80%81npm/" target="_blank" rel="external">这篇文章</a>看看能不能解决你的问题。</p>
+<h3 id="2-2__u521B_u5EFAhexo_u6587_u4EF6_u5939"><a href="#2-2__u521B_u5EFAhexo_u6587_u4EF6_u5939" class="headerlink" title="2.2 创建hexo文件夹"></a>2.2 创建hexo文件夹</h3><p>在你打算管理博客内容的地方，创建一个名为hexo的文件夹。例如我的在：</p>
+<blockquote>
+<p>/Users/drubear/Development/hexo</p>
+</blockquote>
+<p>你也可以直接使用命令行创建目录。</p>
+<h3 id="3-2__u521D_u59CB_u5316"><a href="#3-2__u521D_u59CB_u5316" class="headerlink" title="3.2 初始化"></a>3.2 初始化</h3><p>在 <strong>hexo目录下</strong> 打开命令行工具（或者cd到该目录下），执行：</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">hexo</span> init</span><br></pre></td></tr></table></figure>
+<p>命令行会反馈给你：</p>
+<blockquote>
+<p>You’re almost done!Don’t forget to run <strong>‘npm install’</strong> before you start blogging with Hexo!</p>
+</blockquote>
+<p>那么接下来我们就在命令行中执行:</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install</span></span><br></pre></td></tr></table></figure>
+<p>执行结束后，你只需要执行一个简单的命令，就可以在浏览器中看到博客啦。<br>hexo已经为你准备了模板，现在打开看看吧！<br>先执行：</p>
+<figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="keyword">server</span></span><br></pre></td></tr></table></figure>
+<p>会看到<br><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INFO  Hexo is running <span class="keyword">at</span> <span class="keyword">http</span>://<span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span>:<span class="number">4000</span>/. Press Ctrl+C <span class="built_in">to</span> <span class="built_in">stop</span>.</span><br></pre></td></tr></table></figure></p>
+<p>访问<a href="http://0.0.0.0:4000/" target="_blank" rel="external">http://0.0.0.0:4000/</a>，看见了吗？里面的这篇文章是Hexo为你准备的样例。</p>
+<h2 id="3-_u53D1_u5E03_u65B0_u6587_u7AE0"><a href="#3-_u53D1_u5E03_u65B0_u6587_u7AE0" class="headerlink" title="3.发布新文章"></a>3.发布新文章</h2><p>现在你已经有了一个可以在本机访问的博客，接下来试着发布一篇自己的文章。</p>
+<blockquote>
+<p>如果刚才已经执行过<em>hexo server</em>，先用<em>Ctrl+C</em> 暂停Hexo server。</p>
+</blockquote>
+<p>还是 <strong>在你的Hexo目录下</strong> ，使用命令行执行：<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="keyword">new</span> <span class="string">"我的第一篇文章"</span></span><br></pre></td></tr></table></figure></p>
+<p>双引号内名字就是你文章的标题。<br>这行命令执行完后，Hexo会告诉你，<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INFO  <span class="string">Created:</span> <span class="regexp">~/Development/</span>hexo<span class="regexp">/source/</span>_posts/我的第一篇文章.md</span><br></pre></td></tr></table></figure></p>
+<p>Hexo已经在你的hexo目录中的source/_posts/目录下为你创建了名为”我的第一篇文章”的.md文件。</p>
+<blockquote>
+<p>.md是markdown的缩写。你可以使用文本编辑工具，如系统自带的TextEdit，或者Sublime来编辑。也可以使用专门编辑Markdown格式文本的Markdown编辑器。在Mac下推荐免费的<strong>MacDown</strong>，官方网站的下载在<a href="http://macdown.uranusjr.com/" target="_blank" rel="external">这里</a>。</p>
+</blockquote>
+<p>找到『我的第一篇文章.md』，使用编辑器对它进行编辑，然后保存。</p>
+<blockquote>
+<p>生成的.md文章头部有一些诸如title,date,tags之类的字段，是用来配置这篇文章的标题、日期和tag的。</p>
+</blockquote>
+<p>然后执行：<br><figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="keyword">ge</span><span class="label">nerate</span></span><br></pre></td></tr></table></figure></p>
+<p>或者<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">hexo</span> g</span><br></pre></td></tr></table></figure></p>
+<p>如果出现错误，尝试先<em>hexo clean</em>，再hexo generate。<br>如果没有出现错误，那么执行<em>hexo server</em>，看看你的文章是不是已经出现在博客当中了？</p>
+<p>Tips:</p>
+<ul>
+<li><strong>关于more</strong> 在文章中加入一行<blockquote>
+<!-- more -->
+</blockquote>
+</li>
+</ul>
+<p>可以将文章折叠，点击more按钮才展示全文。这样比较方便浏览，不至于在文章篇幅很长时要滚动很长的距离才能看到下一篇文章。</p>
+<ul>
+<li><strong>关于tags</strong> 如果想为文章配置tags，修改.md文件头部的tags字段。需要注意的是，笔者直接写tags: android,mac没有起作用。查阅资料后，正确的写法应该是：</li>
+</ul>
+<figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tags:  </span><br><span class="line"> -<span class="ruby"> <span class="constant">Android</span></span><br><span class="line"></span> -<span class="ruby"> <span class="constant">Mac</span></span></span><br></pre></td></tr></table></figure>
+<h2 id="4-_u4E2A_u6027_u5316_u914D_u7F6E"><a href="#4-_u4E2A_u6027_u5316_u914D_u7F6E" class="headerlink" title="4.个性化配置"></a>4.个性化配置</h2><p>对自己的hexo博客进行个性化配置，主要从<em>_config.yml</em>入手。建议先备份该文件，再进行修改的尝试。</p>
+<p>在hexo目录下找到<em>_config.yml</em>文件。使用文本编辑器打开，所有的配置选项都在这里，可以查阅文档了解每个配置项的意思，如title代表你博客的名称，author是你的名字，subtitle是副标题等，这些配置项会反应在博客的界面上，不同的主题（Theme，后文会提到）中，这些字段的表现形式是不一样的。<br>我们主要关心三个部分：    </p>
+<ul>
+<li>基本信息，如 title、subtitle、description、author等。基本信息的修改依照主题的不同会有不同的表现方式，按照自己选择的主题来尝试并观察变化即可。</li>
+<li>主题 theme。theme的修改见4.2章节。</li>
+<li>部署 deploy ，后文会已发布到Github为例说明。deploy章节的修改见4.3章节。</li>
+</ul>
+<h2 id="4-1__u57FA_u672C_u4FE1_u606F"><a href="#4-1__u57FA_u672C_u4FE1_u606F" class="headerlink" title="4.1 基本信息"></a>4.1 基本信息</h2><p>笔者修改了title、subtitle、author为下面的内容，你可以在这个页面上看到每一个值都显示在了哪里。</p>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor"># Site</span></span><br><span class="line"><span class="label">title:</span> Drubear的博客</span><br><span class="line"><span class="label">subtitle:</span> 不写代码的音乐家不是一个好科学家</span><br><span class="line"><span class="label">description:</span> </span><br><span class="line"><span class="label">author:</span> Drubear </span><br><span class="line"><span class="label">language:</span></span><br><span class="line"><span class="label">timezone:</span></span><br></pre></td></tr></table></figure>
+<p><strong><em>注意：每一个值的冒号后面都有一个半角空格！</em></strong></p>
+<ul>
+<li>未生效的写法：<em>title:Drubear的博客</em></li>
+<li>能生效的写法：<em>title:[空格]Drubear的博客</em></li>
+</ul>
+<p>改好基本信息，我们再来看看主题该如何改动。</p>
+<h2 id="4-2__u4E3B_u9898"><a href="#4-2__u4E3B_u9898" class="headerlink" title="4.2 主题"></a>4.2 主题</h2><p>在选择主题之前，可以参考知乎的一个文章，这里汇总了一些hexo的主题链接。</p>
+<blockquote>
+<p>知乎 - <a href="http://www.zhihu.com/question/24422335" target="_blank" rel="external">有哪些好看的Hexo主题</a>？</p>
+</blockquote>
+<h3 id="4-2-1__u4E0B_u8F7D_u4E3B_u9898"><a href="#4-2-1__u4E0B_u8F7D_u4E3B_u9898" class="headerlink" title="4.2.1 下载主题"></a>4.2.1 下载主题</h3><p>选好主题之后，以我使用的litten的<a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="external">yilia</a>为例：<br>在hexo目录下，使用命令行工具，输入</p>
+<blockquote>
+<p>git clone <a href="https://github.com/litten/hexo-theme-yilia.git" target="_blank" rel="external">https://github.com/litten/hexo-theme-yilia.git</a> themes/yilia</p>
+</blockquote>
+<p>clone后面跟着的是主题的git repo地址，而themes/yilia则表示要将该主题克隆到hexo/themes/yilia目录中。<br>地址根据主题页面公布的git repo地址变化，而themes/[主题名称] 也有主题名字决定。<br>通常主题的首页会告诉你如何使用，找到长得相似的那一行命令操作即可。</p>
+<p><strong><em>PS 1</em></strong>:<em>地址可能有两种形式，一种是https打头，git结尾，如</em></p>
+<blockquote>
+<p><a href="https://github.com/litten/hexo-theme-yilia.git" target="_blank" rel="external">https://github.com/litten/hexo-theme-yilia.git</a></p>
+</blockquote>
+<p><em>还有一种是git@github.com打头，git结尾，如</em></p>
+<blockquote>
+<p>git@github.com:litten/hexo-theme-yilia.git</p>
+</blockquote>
+<p><em>具体看主题页面上的地址，通常在</em>download ZIP<em>的左边</em>   </p>
+<p><strong><em>PS 2</em></strong>:<em>进入themes目录 直接输入</em></p>
+<blockquote>
+<p>git clone <a href="https://github.com/litten/hexo-theme-yilia.git" target="_blank" rel="external">https://github.com/litten/hexo-theme-yilia.git</a></p>
+</blockquote>
+<p><em>也可以，区别是不用在地址后面指定目录。</em> </p>
+<p>如果你使用的不是yillia，将clone后面的地址，替换为你想要使用的那个地址即可。例如，如果你想使用<a href="https://github.com/heroicyang/hexo-theme-modernist" target="_blank" rel="external">modernist</a>，那么就输入：</p>
+<blockquote>
+<p>git clone <a href="https://github.com/heroicyang/hexo-theme-modernist.git" target="_blank" rel="external">https://github.com/heroicyang/hexo-theme-modernist.git</a> themes/modernist</p>
+</blockquote>
+<h3 id="4-2-2__u914D_u7F6E_u4E3B_u9898_uFF08_u975E_u5FC5_u987B_uFF09"><a href="#4-2-2__u914D_u7F6E_u4E3B_u9898_uFF08_u975E_u5FC5_u987B_uFF09" class="headerlink" title="4.2.2 配置主题（非必须）"></a>4.2.2 配置主题（非必须）</h3><p>以笔者配置的yilia主题为例，当我们需要对主题中的友情链接、个人主页地址做一些配置时，进入<em>tnemes/yilia</em>，找到主题目录下的<em>_config.yml</em>文件。<br>每个主题的配置文件有所不同，具体可参阅主题的主页上的信息。</p>
+<h3 id="4-2-3__u4F7F_u7528_u4E3B_u9898"><a href="#4-2-3__u4F7F_u7528_u4E3B_u9898" class="headerlink" title="4.2.3 使用主题"></a>4.2.3 使用主题</h3><p>回到上一章节中的<em>_config.yml</em>文件，修改其theme字段为</p>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">## Themes: http://hexo.io/themes/</span></span><br><span class="line"><span class="label">theme:</span> yilia</span><br></pre></td></tr></table></figure>
+<p>同样的，别忘了冒号后面需要多一个半角空格。</p>
+<p>OK，主题配置完毕。依次执行如下命令：</p>
+<figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo <span class="keyword">server</span></span><br></pre></td></tr></table></figure>
+<p>如果没有报错的话，访问<a href="http://0.0.0.0:4000/" target="_blank" rel="external">http://0.0.0.0:4000/</a>，你配置的主题已经生效啦！<br>如果有出现报错，通常是因为你的_config.yml改动时出现了问题，除了检查冒号后面是否已经跟上一个半角空格，还可以将备份替换回来排查一下。</p>
+<p>到此为止，你已经成功的在你自己的电脑上部署了拥有主题和内容的个人博客，遗憾的是这个作品只能被你个人访问到。如果能把它部署在GitHub上使这个博客可以被公开访问呢？接下来我们就讲讲如果将Hexo部署到GitHub Pages。</p>
+<h2 id="4-3__u90E8_u7F72_u914D_u7F6E"><a href="#4-3__u90E8_u7F72_u914D_u7F6E" class="headerlink" title="4.3 部署配置"></a>4.3 部署配置</h2><p>我们已经完成了Hexo个性化配置中的基本信息和主题配置，还剩一项部署 - deploy。笔者理解为，当对 <em>_config.yml</em> 文件中的 <em>deploy</em> 进行了配置，那么通过</p>
+<blockquote>
+<p>hexo deploy</p>
+</blockquote>
+<p>命令，就可以将你的Hexo提交到GitHub Pages上，从而刷新你的GitHub Pages页面。</p>
+<p>换句话说，如果执行了new、clean、generate,只是在你的电脑上生成了最新的博客，如果不执行deploy，新添加的内容是不会被推送到GitHub Pages上的。</p>
+<p>既然我们已经决定将Hexo部署到GitHub，那么我们还是先看看需要在GitHub上做哪些前置准备。</p>
+<p>如果你已经准备好，可以直接跳到5.2章节。</p>
+<h1 id="5-_u8FDE_u63A5_u5230GitHub"><a href="#5-_u8FDE_u63A5_u5230GitHub" class="headerlink" title="5.连接到GitHub"></a>5.连接到GitHub</h1><h2 id="5-1__u524D_u7F6E_u51C6_u5907"><a href="#5-1__u524D_u7F6E_u51C6_u5907" class="headerlink" title="5.1 前置准备"></a>5.1 前置准备</h2><p>如果你还没有GitHub账号，在<a href="https://github.com/" target="_blank" rel="external">这里</a>或者<a href="https://github.com/join" target="_blank" rel="external">这里</a>申请一个。</p>
+<p>如果你拥有了账号，还没有GitHub Pages地址，在页面右上角你的头像旁边点击 + 号按钮，选择<em>repository</em>。或者直接点击这里(<a href="https://github.com/new)。" target="_blank" rel="external">https://github.com/new)。</a></p>
+<p>在 <em>Repository name</em> 栏中，输入</p>
+<blockquote>
+<p><strong>[你的用户名]</strong>.github.io</p>
+</blockquote>
+<p><strong><em>注意，你的用户名必须与你实际的用户名一字不差！</em></strong></p>
+<p>这个用户名可以在 <em>Repository name</em> 栏左边那个 <em>Owner</em> 中找到，<strong><em>保持一致</em></strong> 即可。</p>
+<p>比如我的GitHub用户名是drubear，那么我的Owner中会显示drubear，而我应该在 <em>Repository name</em> 中填写：</p>
+<blockquote>
+<p>drubear.github.io</p>
+</blockquote>
+<p>Description可填简要介绍，也可以不填。</p>
+<p>然后选Public。</p>
+<p>去掉 <em>Initialize this repository with a README</em> 前的钩。</p>
+<p>然后点击 <em>Create repository</em>。</p>
+<p>成功后，就可以通过 <a href="http://[你的用户名].github.io" target="_blank" rel="external">http://[你的用户名].github.io</a> 访问你的页面了。</p>
+<p>也许它现在还空无一物，接下来我们就把Hexo的内容放进去。</p>
+<h2 id="5-2__u914D_u7F6EDeploy"><a href="#5-2__u914D_u7F6EDeploy" class="headerlink" title="5.2 配置Deploy"></a>5.2 配置Deploy</h2><p>当你拥有了个人的GitHub Pages后，再回到Hexo的<em>_config.yml</em>文件，找到Deployment章节。<br>将type改为git，repository改为你的GitHub Pages地址。这个地址应该长这样：</p>
+<blockquote>
+<p>git@github.com:[你的GitHub用户名]/[你的GitHub用户名].github.io.git</p>
+</blockquote>
+<p>branch用来指向分支，如果没有特定的分支配置，可以使用默认的master。</p>
+<p>最终Deployment部分看起来应该是下面这个样子：</p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: http://hexo.io/docs/deployment.html</span></span><br><span class="line">deploy:</span><br><span class="line">  <span class="operator">type</span>: git</span><br><span class="line">  repository: git@github.com:drubear/drubear.github.io.git</span><br><span class="line">  branch: <span class="literal">master</span></span><br></pre></td></tr></table></figure>
+<p>通过前面1、2、3、4章节的步骤，我们已经准备好了要发布的博客。执行命令：</p>
+<blockquote>
+<p>hexo deploy</p>
+</blockquote>
+<p>如果没有报错，你可以访问自己的GitHub Pages页面查看你所建立的博客了。</p>
+<p>比如我的博客，地址应该为：</p>
+<blockquote>
+<p><a href="http://drubear.github.io/" target="_blank" rel="external">http://drubear.github.io/</a></p>
+</blockquote>
+<p>将[drubear]替换为你的用户名即可。</p>
+<p>恭喜！你已经使用Hexo完成了个人博客的搭建并将它发布在GitHub Pages可供公开访问啦！</p>
+<h1 id="6-_u65E5_u5E38_u7EF4_u62A4"><a href="#6-_u65E5_u5E38_u7EF4_u62A4" class="headerlink" title="6.日常维护"></a>6.日常维护</h1><p>当部署成功后，我们日常只需要：</p>
+<ol>
+<li>新建文章(new)</li>
+<li>找到生成的.md然后编辑并保存</li>
+<li>生成博客(generate)</li>
+<li>部署(deploy)</li>
+</ol>
+<p>就可以完成新文章的发布。</p>
+<p>日常使用命令整理如下：</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">hexo new <span class="string">"文章标题名称"</span> <span class="comment">//新建文章</span></span><br><span class="line"></span><br><span class="line">hexo clean <span class="comment">//清理（非必须），在遇到问题时可尝试先clean再generate</span></span><br><span class="line"></span><br><span class="line">hexo <span class="keyword">generate</span> <span class="comment">//将文章生成为博客的一部分</span></span><br><span class="line">hexo <span class="keyword">g</span> <span class="comment">//同上，generate的简写</span></span><br><span class="line"></span><br><span class="line">hexo server <span class="comment">//本地预览（非必须）</span></span><br><span class="line"></span><br><span class="line">hexo deploy <span class="comment">//推送到GitHub</span></span><br><span class="line">hexo <span class="keyword">d</span> <span class="comment">//同上，deploy的简写</span></span><br></pre></td></tr></table></figure>
+<h2 id="7-_u7B14_u8005_u9047_u5230_u7684_u95EE_u9898"><a href="#7-_u7B14_u8005_u9047_u5230_u7684_u95EE_u9898" class="headerlink" title="7.笔者遇到的问题"></a>7.笔者遇到的问题</h2><h3 id="1-Deployer_not_found_3A_git"><a href="#1-Deployer_not_found_3A_git" class="headerlink" title="1.Deployer not found: git"></a>1.Deployer not found: git</h3><p>出现这个错误，先确认deploy的type已经改成了git。<br>然后在<em>hexo</em>目录下运行：</p>
+<blockquote>
+<p>npm install hexo-deployer-git –save</p>
+</blockquote>
+<p>之后再执行</p>
+<blockquote>
+<p>hexo generate<br>hexo deploy</p>
+</blockquote>
+<p>即可。</p>
+<h3 id="2-genrnate__u62A5_u9519"><a href="#2-genrnate__u62A5_u9519" class="headerlink" title="2.genrnate 报错"></a>2.genrnate 报错</h3><p>检查_config.yml配置中，键值对冒号后面是否已经预留了一个半角空格。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/12/30/Mac-OS-X下进行APK逆向/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Mac OS X下进行APK逆向</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="手把手教你用Hexo在GitHub搭建博客" data-title="手把手教你用Hexo在GitHub搭建博客" data-url="http://yoursite.com/2016/01/28/手把手教你用Hexo在GitHub搭建博客/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 Drubear
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
