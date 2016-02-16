@@ -4,18 +4,21 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>修改Git Repo地址 | Drubear的博客</title>
+  <title>GitLab备份与还原过程中的权限问题 | Drubear的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在Git的使用场景中，如果一个项目关联到两个远程repo(仓库)，通常这两个repo一个是源项目（upstream），一个是fork到自己空间下的该项目(origin)。这种情况下，一般是用git remote add origin [repo地址]和git remote add upstream [repo地址]，如：">
+  <meta name="description" content="在对GitLab进行备份（Backup）与还原（Restore）时，分别遇到了权限相关的问题。备份时，执行
+1gitlab-rake gitlab:backup:create">
 <meta property="og:type" content="article">
-<meta property="og:title" content="修改Git Repo地址">
-<meta property="og:url" content="http://yoursite.com/2016/02/03/修改Git-Repo地址/index.html">
+<meta property="og:title" content="GitLab备份与还原过程中的权限问题">
+<meta property="og:url" content="http://yoursite.com/2016/02/16/GitLab备份与还原过程中的权限问题/index.html">
 <meta property="og:site_name" content="Drubear的博客">
-<meta property="og:description" content="在Git的使用场景中，如果一个项目关联到两个远程repo(仓库)，通常这两个repo一个是源项目（upstream），一个是fork到自己空间下的该项目(origin)。这种情况下，一般是用git remote add origin [repo地址]和git remote add upstream [repo地址]，如：">
-<meta property="og:updated_time" content="2016-02-04T09:52:20.000Z">
+<meta property="og:description" content="在对GitLab进行备份（Backup）与还原（Restore）时，分别遇到了权限相关的问题。备份时，执行
+1gitlab-rake gitlab:backup:create">
+<meta property="og:updated_time" content="2016-02-16T07:27:35.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="修改Git Repo地址">
-<meta name="twitter:description" content="在Git的使用场景中，如果一个项目关联到两个远程repo(仓库)，通常这两个repo一个是源项目（upstream），一个是fork到自己空间下的该项目(origin)。这种情况下，一般是用git remote add origin [repo地址]和git remote add upstream [repo地址]，如：">
+<meta name="twitter:title" content="GitLab备份与还原过程中的权限问题">
+<meta name="twitter:description" content="在对GitLab进行备份（Backup）与还原（Restore）时，分别遇到了权限相关的问题。备份时，执行
+1gitlab-rake gitlab:backup:create">
   
     <link rel="alternative" href="/atom.xml" title="Drubear的博客" type="application/atom+xml">
   
@@ -178,11 +181,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-修改Git-Repo地址" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-GitLab备份与还原过程中的权限问题" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/02/03/修改Git-Repo地址/" class="article-date">
-  	<time datetime="2016-02-03T01:35:34.000Z" itemprop="datePublished">2016-02-03</time>
+      <a href="/2016/02/16/GitLab备份与还原过程中的权限问题/" class="article-date">
+  	<time datetime="2016-02-16T03:22:56.000Z" itemprop="datePublished">2016-02-16</time>
 </a>
     </div>
   
@@ -195,7 +198,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      修改Git Repo地址
+      GitLab备份与还原过程中的权限问题
     </h1>
   
 
@@ -203,10 +206,6 @@
       
       <div class="article-info article-info-post">
         
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
-	</div>
-
         
 
         <div class="clearfix"></div>
@@ -215,23 +214,31 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>在Git的使用场景中，如果一个项目关联到两个远程repo(仓库)，通常这两个repo一个是源项目（upstream），一个是fork到自己空间下的该项目(origin)。这种情况下，一般是用git remote add origin [repo地址]和git remote add upstream [repo地址]，如：</p>
+        <p>在对GitLab进行备份（Backup）与还原（Restore）时，分别遇到了权限相关的问题。<br>备份时，执行</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">gitlab-rake</span> <span class="tag">gitlab</span><span class="pseudo">:backup</span><span class="pseudo">:create</span></span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin git@github<span class="class">.com</span>:drubear/echarts<span class="class">.git</span></span><br><span class="line"></span><br><span class="line">git remote add upstream git@github<span class="class">.com</span>:google/gson.git</span><br></pre></td></tr></table></figure>
-<p>但如果遇到repo主机的ip发生变化、repo迁移等情况，需要修改origin中指向的地址，可以使用如下几种方法。<br>在开始前，先使用<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">git</span> remote -v</span><br></pre></td></tr></table></figure></p>
-<p>命令，查看一下现在origin指向的url地址。</p>
-<h3 id="u65B9_u6CD51_uFF1A_u7528git_remote_set-url_u547D_u4EE4__u4FEE_u6539origin_u4E2Durl_u7684_u6307_u5411"><a href="#u65B9_u6CD51_uFF1A_u7528git_remote_set-url_u547D_u4EE4__u4FEE_u6539origin_u4E2Durl_u7684_u6307_u5411" class="headerlink" title="方法1：用git remote set-url命令 修改origin中url的指向"></a>方法1：用<em>git remote set-url</em>命令 修改origin中url的指向</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote <span class="operator"><span class="keyword">set</span>-<span class="keyword">url</span> origin &lt;新的git repo地址&gt;</span></span><br></pre></td></tr></table></figure>
-<p>如</p>
-<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote <span class="literal">set</span>-url origin git<span class="annotation">@github</span>.com:google/gson.git</span><br></pre></td></tr></table></figure>
-<p>最后，使用<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">git</span> remote -v</span><br></pre></td></tr></table></figure></p>
-<p>查一下origin是否已经被修改到了期望的地址。</p>
-<h3 id="u65B9_u6CD52_uFF1A_u4FEE_u6539git_u7684config_u6587_u4EF6"><a href="#u65B9_u6CD52_uFF1A_u4FEE_u6539git_u7684config_u6587_u4EF6" class="headerlink" title="方法2：修改git的config文件"></a>方法2：修改git的config文件</h3><p>方法2在原理上与方法1相同。<br>显示隐藏文件，找到项目根目录下的.git文件夹。<br>再找到其中的config文件（建议先做备份）。<br>然后修改其中的url字段，如下：<br><figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="atom">remote</span> <span class="string">"origin"</span>]</span><br><span class="line">	<span class="atom">url</span> = [改为你期望的<span class="atom">git</span>地址]</span><br></pre></td></tr></table></figure></p>
-<p>然后，使用<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">git</span> remote -v</span><br></pre></td></tr></table></figure></p>
-<p>查一下origin是否已经被修改到了期望的地址。</p>
-<h3 id="u65B9_u6CD53_uFF1A_u5148_u5220_u6389origin_uFF0C_u518D_u91CD_u65B0_u6DFB_u52A0"><a href="#u65B9_u6CD53_uFF1A_u5148_u5220_u6389origin_uFF0C_u518D_u91CD_u65B0_u6DFB_u52A0" class="headerlink" title="方法3：先删掉origin，再重新添加"></a>方法3：先删掉origin，再重新添加</h3><p>使用rm命令删除origin。<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">git</span> remote rm origin</span><br></pre></td></tr></table></figure></p>
-<p>然后使用add命令重新添加<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin git<span class="annotation">@github</span>.<span class="string">com:</span>google/gson.git</span><br></pre></td></tr></table></figure></p>
-<p>最后，使用<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">git</span> remote -v</span><br></pre></td></tr></table></figure></p>
-<p>查一下origin是否已经被修改到了期望的地址。</p>
+<p>得到错误提示</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">Errno:</span>:<span class="string">EACCES:</span> Permission denied @ dir_s_mkdir - <span class="regexp">/var/</span>opt<span class="regexp">/gitlab/</span>backups</span><br></pre></td></tr></table></figure>
+<p>没有执行mkdir的权限。</p>
+<p>而在Restore时，执行</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gitlab-rake gitlab:<span class="operator"><span class="keyword">backup</span>:<span class="keyword">restore</span> <span class="keyword">BACKUP</span>=<span class="number">1393513186</span></span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>其中1393513186为backup的时间戳编号，会在gitlab_backup.tar文件的文件名体现。</p>
+</blockquote>
+<p>又遇到大量的mkdir、找不到文件/文件夹错误。</p>
+<p>而我是用root用户登录的，联想可能是相关的文件夹权限有问题。<br>backups是我使用mkdir命令创建的，并没有特别分配权限，于是使用 <em>ls -al</em> 命令查看backups文件夹的权限。<br>发现值为</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drwxr-xr-x. <span class="number">2</span> root root <span class="number">4096</span> <span class="number">2</span>月 <span class="number">16</span> <span class="number">10</span>:<span class="number">08</span> backups</span><br></pre></td></tr></table></figure>
+<p>判断是执行实际操作的gitlab相关用户：git，没有得到足够的权限。依次执行命令：</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">root<span class="variable">@myserver</span><span class="symbol">:~</span><span class="comment"># mkdir /var/opt/gitlab/backups</span></span><br><span class="line"></span><br><span class="line">root<span class="variable">@myserver</span><span class="symbol">:~</span><span class="comment"># chown git /var/opt/gitlab/backups</span></span><br><span class="line"></span><br><span class="line">root<span class="variable">@myserver</span><span class="symbol">:~</span><span class="comment"># chmod 700 /var/opt/gitlab/backups</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>笔者之前使用了 <em>rm -rf backups</em> 命令移除整个backups文件夹，所以需要再次mkdir。如果该文件夹已经存在，就不需要mkdir了。</p>
+</blockquote>
+<p>以上命令执行完成后，再次 <em>ls -al</em><br>发现backups的权限已经发生改变了:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drwx------. <span class="number">2</span> git root <span class="number">4096</span> <span class="number">2</span>月 <span class="number">16</span> <span class="number">10</span>:<span class="number">18</span> backups</span><br></pre></td></tr></table></figure>
+<p>再次执行backup或者restore，已经可以正常运行，问题解决。</p>
+<blockquote>
+<p>Reference:<a href="https://gitlab.com/gitlab-org/omnibus-gitlab/issues/644" target="_blank" rel="external">issue644 - Permissions issue when creating backups</a> </p>
+</blockquote>
 
       
     </div>
@@ -241,18 +248,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/02/16/GitLab备份与还原过程中的权限问题/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          GitLab备份与还原过程中的权限问题
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/01/28/手把手教你用Hexo在GitHub搭建博客/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">手把手教你用Hexo在GitHub搭建博客</div>
+    <a href="/2016/02/03/修改Git-Repo地址/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">修改Git Repo地址</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -287,7 +285,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="修改Git-Repo地址" data-title="修改Git Repo地址" data-url="http://yoursite.com/2016/02/03/修改Git-Repo地址/"></div>
+	<div class="ds-thread" data-thread-key="GitLab备份与还原过程中的权限问题" data-title="GitLab备份与还原过程中的权限问题" data-url="http://yoursite.com/2016/02/16/GitLab备份与还原过程中的权限问题/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
