@@ -6,16 +6,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>修改Git Repo地址 | Drubear的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在Git的使用场景中，如果一个项目关联到两个远程repo(仓库)，通常这两个repo一个是源项目（upstream），一个是fork到自己空间下的该项目(origin)。这种情况下，一般是用git remote add origin [repo地址]和git remote add upstream [repo地址]，如：">
+  <meta name="description" content="转载请注明原作者，如果觉得有用，不用请我喝咖啡:D
+在Git的使用场景中，如果一个项目关联到两个远程repo(仓库)，通常这两个repo一个是源项目（upstream），一个是fork到自己空间下的该项目(origin)。这种情况下，一般是用git remote add origin [repo地址]和git remote add upstream [repo地址]，如：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="修改Git Repo地址">
 <meta property="og:url" content="http://yoursite.com/2016/02/03/修改Git-Repo地址/index.html">
 <meta property="og:site_name" content="Drubear的博客">
-<meta property="og:description" content="在Git的使用场景中，如果一个项目关联到两个远程repo(仓库)，通常这两个repo一个是源项目（upstream），一个是fork到自己空间下的该项目(origin)。这种情况下，一般是用git remote add origin [repo地址]和git remote add upstream [repo地址]，如：">
-<meta property="og:updated_time" content="2016-02-04T09:52:20.000Z">
+<meta property="og:description" content="转载请注明原作者，如果觉得有用，不用请我喝咖啡:D
+在Git的使用场景中，如果一个项目关联到两个远程repo(仓库)，通常这两个repo一个是源项目（upstream），一个是fork到自己空间下的该项目(origin)。这种情况下，一般是用git remote add origin [repo地址]和git remote add upstream [repo地址]，如：">
+<meta property="og:updated_time" content="2016-02-17T01:18:17.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="修改Git Repo地址">
-<meta name="twitter:description" content="在Git的使用场景中，如果一个项目关联到两个远程repo(仓库)，通常这两个repo一个是源项目（upstream），一个是fork到自己空间下的该项目(origin)。这种情况下，一般是用git remote add origin [repo地址]和git remote add upstream [repo地址]，如：">
+<meta name="twitter:description" content="转载请注明原作者，如果觉得有用，不用请我喝咖啡:D
+在Git的使用场景中，如果一个项目关联到两个远程repo(仓库)，通常这两个repo一个是源项目（upstream），一个是fork到自己空间下的该项目(origin)。这种情况下，一般是用git remote add origin [repo地址]和git remote add upstream [repo地址]，如：">
   
     <link rel="alternative" href="/atom.xml" title="Drubear的博客" type="application/atom+xml">
   
@@ -215,20 +218,25 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>在Git的使用场景中，如果一个项目关联到两个远程repo(仓库)，通常这两个repo一个是源项目（upstream），一个是fork到自己空间下的该项目(origin)。这种情况下，一般是用git remote add origin [repo地址]和git remote add upstream [repo地址]，如：</p>
+        <p><strong>转载请注明<a href="http://drubear.github.io" target="_blank" rel="external">原作者</a>，如果觉得有用，不用请我喝咖啡:D</strong></p>
+<p>在Git的使用场景中，如果一个项目关联到两个远程repo(仓库)，通常这两个repo一个是源项目（upstream），一个是fork到自己空间下的该项目(origin)。这种情况下，一般是用git remote add origin [repo地址]和git remote add upstream [repo地址]，如：</p>
 <a id="more"></a>
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin git@github<span class="class">.com</span>:drubear/echarts<span class="class">.git</span></span><br><span class="line"></span><br><span class="line">git remote add upstream git@github<span class="class">.com</span>:google/gson.git</span><br></pre></td></tr></table></figure>
 <p>但如果遇到repo主机的ip发生变化、repo迁移等情况，需要修改origin中指向的地址，可以使用如下几种方法。<br>在开始前，先使用<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">git</span> remote -v</span><br></pre></td></tr></table></figure></p>
 <p>命令，查看一下现在origin指向的url地址。</p>
-<h3 id="u65B9_u6CD51_uFF1A_u7528git_remote_set-url_u547D_u4EE4__u4FEE_u6539origin_u4E2Durl_u7684_u6307_u5411"><a href="#u65B9_u6CD51_uFF1A_u7528git_remote_set-url_u547D_u4EE4__u4FEE_u6539origin_u4E2Durl_u7684_u6307_u5411" class="headerlink" title="方法1：用git remote set-url命令 修改origin中url的指向"></a>方法1：用<em>git remote set-url</em>命令 修改origin中url的指向</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote <span class="operator"><span class="keyword">set</span>-<span class="keyword">url</span> origin &lt;新的git repo地址&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="u65B9_u6CD51"><a href="#u65B9_u6CD51" class="headerlink" title="方法1"></a>方法1</h1><hr>
+<p>用<em>git remote set-url</em>命令 修改origin中url的指向。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote <span class="operator"><span class="keyword">set</span>-<span class="keyword">url</span> origin &lt;新的git repo地址&gt;</span></span><br></pre></td></tr></table></figure>
 <p>如</p>
 <figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote <span class="literal">set</span>-url origin git<span class="annotation">@github</span>.com:google/gson.git</span><br></pre></td></tr></table></figure>
 <p>最后，使用<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">git</span> remote -v</span><br></pre></td></tr></table></figure></p>
 <p>查一下origin是否已经被修改到了期望的地址。</p>
-<h3 id="u65B9_u6CD52_uFF1A_u4FEE_u6539git_u7684config_u6587_u4EF6"><a href="#u65B9_u6CD52_uFF1A_u4FEE_u6539git_u7684config_u6587_u4EF6" class="headerlink" title="方法2：修改git的config文件"></a>方法2：修改git的config文件</h3><p>方法2在原理上与方法1相同。<br>显示隐藏文件，找到项目根目录下的.git文件夹。<br>再找到其中的config文件（建议先做备份）。<br>然后修改其中的url字段，如下：<br><figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="atom">remote</span> <span class="string">"origin"</span>]</span><br><span class="line">	<span class="atom">url</span> = [改为你期望的<span class="atom">git</span>地址]</span><br></pre></td></tr></table></figure></p>
+<h1 id="u65B9_u6CD52"><a href="#u65B9_u6CD52" class="headerlink" title="方法2"></a>方法2</h1><hr>
+<p>修改git的config文件。<br>方法2在原理上与方法1相同。<br>显示隐藏文件，找到项目根目录下的.git文件夹。<br>再找到其中的config文件（建议先做备份）。<br>然后修改其中的url字段，如下：<br><figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="atom">remote</span> <span class="string">"origin"</span>]</span><br><span class="line">	<span class="atom">url</span> = [改为你期望的<span class="atom">git</span>地址]</span><br></pre></td></tr></table></figure></p>
 <p>然后，使用<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">git</span> remote -v</span><br></pre></td></tr></table></figure></p>
 <p>查一下origin是否已经被修改到了期望的地址。</p>
-<h3 id="u65B9_u6CD53_uFF1A_u5148_u5220_u6389origin_uFF0C_u518D_u91CD_u65B0_u6DFB_u52A0"><a href="#u65B9_u6CD53_uFF1A_u5148_u5220_u6389origin_uFF0C_u518D_u91CD_u65B0_u6DFB_u52A0" class="headerlink" title="方法3：先删掉origin，再重新添加"></a>方法3：先删掉origin，再重新添加</h3><p>使用rm命令删除origin。<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">git</span> remote rm origin</span><br></pre></td></tr></table></figure></p>
+<h1 id="u65B9_u6CD53"><a href="#u65B9_u6CD53" class="headerlink" title="方法3"></a>方法3</h1><hr>
+<p>先删掉origin，再重新添加。<br>使用rm命令删除origin。<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">git</span> remote rm origin</span><br></pre></td></tr></table></figure></p>
 <p>然后使用add命令重新添加<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin git<span class="annotation">@github</span>.<span class="string">com:</span>google/gson.git</span><br></pre></td></tr></table></figure></p>
 <p>最后，使用<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">git</span> remote -v</span><br></pre></td></tr></table></figure></p>
 <p>查一下origin是否已经被修改到了期望的地址。</p>
