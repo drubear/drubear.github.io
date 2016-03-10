@@ -20,7 +20,7 @@ http://downloads.mongodb.org/osx/mongodb-osx-x86_64-3.0.7.tgz
 http://downloads.mongodb.org/osx/mongodb-osx-x86_64-3.0.7.tgz  
 
 2.解压安装包，得到一个带bin目录的文件夹">
-<meta property="og:updated_time" content="2015-12-30T05:46:59.000Z">
+<meta property="og:updated_time" content="2016-03-10T16:20:55.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac OS X下安装MongoDB">
 <meta name="twitter:description" content="转载请注明原作者，如果你觉得这篇文章对你有帮助或启发，不用请我喝咖啡:D
@@ -122,7 +122,7 @@ http://downloads.mongodb.org/osx/mongodb-osx-x86_64-3.0.7.tgz
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Mac/" style="font-size: 15px;">Mac</a> <a href="/tags/MongoDB/" style="font-size: 10px;">MongoDB</a> <a href="/tags/NoSQL/" style="font-size: 10px;">NoSQL</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/gitlab/" style="font-size: 10px;">gitlab</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a>
+						<a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Mac/" style="font-size: 15px;">Mac</a> <a href="/tags/MongoDB/" style="font-size: 10px;">MongoDB</a> <a href="/tags/NoSQL/" style="font-size: 10px;">NoSQL</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/gitlab/" style="font-size: 10px;">gitlab</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a>
 					</div>
 				</section>
 				
@@ -236,28 +236,27 @@ http://downloads.mongodb.org/osx/mongodb-osx-x86_64-3.0.7.tgz
 <blockquote>
 <p>/Users/w3studio/Development/mongodb   </p>
 </blockquote>
-<h2 id="4-_u521B_u5EFA/usr/local/mongodb_u8F6F_u94FE_u63A5"><a href="#4-_u521B_u5EFA/usr/local/mongodb_u8F6F_u94FE_u63A5" class="headerlink" title="4.创建/usr/local/mongodb软链接"></a>4.创建/usr/local/mongodb软链接</h2><blockquote>
-<p>sudo ln -s /Users/w3studio/Development/mongodb /usr/local/mongodb</p>
-</blockquote>
+<h2 id="4-_u521B_u5EFA/usr/local/mongodb_u8F6F_u94FE_u63A5"><a href="#4-_u521B_u5EFA/usr/local/mongodb_u8F6F_u94FE_u63A5" class="headerlink" title="4.创建/usr/local/mongodb软链接"></a>4.创建/usr/local/mongodb软链接</h2><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ln -s <span class="regexp">/Users/</span>w3studio<span class="regexp">/Development/m</span>ongodb <span class="regexp">/usr/</span>local<span class="regexp">/mongodb</span></span><br></pre></td></tr></table></figure>
 <h2 id="5-_u914D_u7F6EPATH"><a href="#5-_u914D_u7F6EPATH" class="headerlink" title="5.配置PATH"></a>5.配置PATH</h2><p>编辑.bash_profile，增加如下两行：</p>
-<blockquote>
-<p>MONGODB_HOME=/usr/local/mongodb;<br>export PATH=$PATH:$MONGODB_HOME/bin</p>
-</blockquote>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">MONGODB_HOME=/usr/local/mongodb;</span><br><span class="line">export PATH=<span class="variable">$PATH</span>:<span class="variable">$MONGODB</span>_HOME/bin</span><br></pre></td></tr></table></figure>
 <h2 id="6-_u9A8C_u8BC1PATH_u53CAmongodb_u7248_u672C"><a href="#6-_u9A8C_u8BC1PATH_u53CAmongodb_u7248_u672C" class="headerlink" title="6.验证PATH及mongodb版本"></a>6.验证PATH及mongodb版本</h2><ul>
 <li><p>输入如下命令，检查PATH中是否已经包含了mongodb/bin。    </p>
-<blockquote>
-<p>echo $PATH   </p>
-</blockquote>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo <span class="variable">$PATH</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>输入如下命令，检查mongodb版本。    </p>
-<blockquote>
-<p>mongod -version</p>
-</blockquote>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongod -<span class="property">version</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h2 id="7-_u521B_u5EFA_u6570_u636E_u5E93"><a href="#7-_u521B_u5EFA_u6570_u636E_u5E93" class="headerlink" title="7.创建数据库"></a>7.创建数据库</h2><p>在mongodb根目录下创建data文件夹，及/data/<yourdbpath>，这里我是用的是/data/db。    </yourdbpath></p>
+<h2 id="7-_u521B_u5EFA_u6570_u636E_u5E93"><a href="#7-_u521B_u5EFA_u6570_u636E_u5E93" class="headerlink" title="7.创建数据库"></a>7.创建数据库</h2><p>在mongodb根目录下，用如下命令创建默认的db文件夹。</p>
+<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">sudo</span> mkdir -p /<span class="typedef"><span class="keyword">data</span>/db</span></span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>mongod –dbpath /Users/w3studio/Development/mongodb/data/db   </p>
+<p><a href="https://docs.mongodb.org/manual/tutorial/install-mongodb-on-os-x/" target="_blank" rel="external">官方文档</a>如是说：<br>Create the data directory.<br>Before you start MongoDB for the first time, create the directory to which the mongod process will write data. By default, the mongod process uses the /data/db directory. If you create a directory other than this one, you must specify that directory in the dbpath option when starting the mongod process later in this procedure.</p>
+</blockquote>
+<h2 id="8-_u542F_u52A8MongoDB"><a href="#8-_u542F_u52A8MongoDB" class="headerlink" title="8.启动MongoDB"></a>8.启动MongoDB</h2><p>创建好后，输入</p>
+<pre><code>mongod
+</code></pre><p>即可启动。<br>也可以使用mongod –dbpath指定db路径。</p>
+<blockquote>
+<p>mongod –dbpath &lt;你的DB路径&gt;</p>
 </blockquote>
 <h2 id="8-Done"><a href="#8-Done" class="headerlink" title="8.Done"></a>8.Done</h2><h2 id="9-_u76F8_u5173_u5DE5_u5177_u63A8_u8350"><a href="#9-_u76F8_u5173_u5DE5_u5177_u63A8_u8350" class="headerlink" title="9.相关工具推荐"></a>9.相关工具推荐</h2><ul>
 <li><a href="www.robomongo.org">较轻量、上手快的Robomongo</a></li>
