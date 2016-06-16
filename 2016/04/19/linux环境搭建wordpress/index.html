@@ -4,17 +4,27 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Tag: Mac | Drubear的博客</title>
+  <title>Drubear的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
+  <meta name="description" content="#Centos 6.5 安装wordpress建议：下载xampp-linux-x64-1.8.3-5-installer.run和 wordpress-4.4.2-zh_CN并上传到linux服务器
+使用命令安装：安装前，需要先给xampp安装包可执行的权限
+chmod 777 xampp-linux-x64-1.8.3-5-installer.run      
+运行 ./xampp-linu">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Drubear的博客">
-<meta property="og:url" content="http://yoursite.com/tags/Mac/index.html">
+<meta property="og:url" content="http://yoursite.com/2016/04/19/linux环境搭建wordpress/index.html">
 <meta property="og:site_name" content="Drubear的博客">
-<meta property="og:description">
+<meta property="og:description" content="#Centos 6.5 安装wordpress建议：下载xampp-linux-x64-1.8.3-5-installer.run和 wordpress-4.4.2-zh_CN并上传到linux服务器
+使用命令安装：安装前，需要先给xampp安装包可执行的权限
+chmod 777 xampp-linux-x64-1.8.3-5-installer.run      
+运行 ./xampp-linu">
+<meta property="og:updated_time" content="2016-04-19T03:31:35.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Drubear的博客">
-<meta name="twitter:description">
+<meta name="twitter:description" content="#Centos 6.5 安装wordpress建议：下载xampp-linux-x64-1.8.3-5-installer.run和 wordpress-4.4.2-zh_CN并上传到linux服务器
+使用命令安装：安装前，需要先给xampp安装包可执行的权限
+chmod 777 xampp-linux-x64-1.8.3-5-installer.run      
+运行 ./xampp-linu">
   
     <link rel="alternative" href="/atom.xml" title="Drubear的博客" type="application/atom+xml">
   
@@ -177,84 +187,116 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-linux环境搭建wordpress" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/12/30/Mac-OS-X下安装MongoDB/" class="archive-article-date">
-  	<time datetime="2015-12-30T05:38:02.000Z" itemprop="datePublished">Dec 30</time>
+    <div class="article-meta">
+      <a href="/2016/04/19/linux环境搭建wordpress/" class="article-date">
+  	<time datetime="2016-04-19T03:31:35.000Z" itemprop="datePublished">2016-04-19</time>
 </a>
-        </div>
-    	 
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/12/30/Mac-OS-X下安装MongoDB/">Mac OS X下安装MongoDB</a>
-    </h1>
-  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#Centos 6.5 安装wordpress<br>建议：下载xampp-linux-x64-1.8.3-5-installer.run和 wordpress-4.4.2-zh_CN并上传到linux服务器</p>
+<h2 id="u4F7F_u7528_u547D_u4EE4_u5B89_u88C5_uFF1A"><a href="#u4F7F_u7528_u547D_u4EE4_u5B89_u88C5_uFF1A" class="headerlink" title="使用命令安装："></a>使用命令安装：</h2><pre><code>安装前，需要先给xampp安装包可执行的权限
+chmod 777 xampp-linux-x64-1.8.3-5-installer.run      
+运行 ./xampp-linux-x64-5.6.14-0-installer.run 进行安装操作。
+</code></pre><p>至此，安装步骤就已经完成了  启动xampp：</p>
+<pre><code>#/opt/lampp/lampp start
+</code></pre><p>停止xampp:</p>
+<pre><code>#/opt/lampp/lampp stop
+</code></pre><p>卸载xampp</p>
+<pre><code># /opt/lampp/lampp stop
+# rm -rf /opt/lampp
+</code></pre><p>##</p>
+<h2 id="u8BA9_u5C40_u57DF_u7F51_u5747_u53EF_u8BBF_u95EE"><a href="#u8BA9_u5C40_u57DF_u7F51_u5747_u53EF_u8BBF_u95EE" class="headerlink" title="让局域网均可访问"></a>让局域网均可访问</h2><p>安装完成后，很多时候用locahost来访问时，是没有问题的，但是同一局域网里其它主机用域名访问时，常常不能访问，这里情况大概分为两种：  </p>
+<ol>
+<li><p>xampp的配置文件：/opt/lampp/etc/extra/httpd-xampp.conf中将一下内容屏蔽<br><locationmatch "^="" (?i:(?:xampp|security|licenses|phpmyadmin|webalizer|server-status|server-info))"=""><br>Require local<br>ErrorDocument 403 /error/XAMPP_FORBIDDEN.html.var</locationmatch></p>
+</li>
+<li><p>如果按照以上修改后，还是不能访问，则可能是防火墙把80端口给干掉了，要么把防火墙关闭，要么配置一下80端口允许访问。</p>
+</li>
+<li><p>安装完成后启动XAMPP后台管理<br>进行数据库配置<br>将wordpress目录中的wp-config-sample.php进行数据库配置（正确填写数据库的相关信息）并改名为wp-config.php。</p>
+</li>
+</ol>
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac/">Mac</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MongoDB/">MongoDB</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NoSQL/">NoSQL</a></li></ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    
   </div>
-</article>
   
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/12/22/Mac-OS-X安装Node-js、npm/" class="archive-article-date">
-  	<time datetime="2015-12-22T06:29:45.000Z" itemprop="datePublished">Dec 22</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/12/22/Mac-OS-X安装Node-js、npm/">Mac OS X安装Node.js、npm</a>
-    </h1>
+    <a href="/2016/04/20/CentOS安装EPEL/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          CentOS安装EPEL
+        
+      </div>
+    </a>
   
+  
+    <a href="/2016/03/11/关于CocoaPods的问题处理/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">关于CocoaPods的问题处理</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac/">Mac</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li></ul>
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
 	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
-    
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="linux环境搭建wordpress" data-title="" data-url="http://yoursite.com/2016/04/19/linux环境搭建wordpress/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
 
 </div>
       <footer id="footer">
@@ -280,9 +322,9 @@
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false
 	}

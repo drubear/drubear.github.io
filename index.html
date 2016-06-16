@@ -109,7 +109,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Mac/" style="font-size: 15px;">Mac</a> <a href="/tags/MongoDB/" style="font-size: 10px;">MongoDB</a> <a href="/tags/NoSQL/" style="font-size: 10px;">NoSQL</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/gitlab/" style="font-size: 10px;">gitlab</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a>
+						<a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Mac/" style="font-size: 15px;">Mac</a> <a href="/tags/MongoDB/" style="font-size: 10px;">MongoDB</a> <a href="/tags/NoSQL/" style="font-size: 10px;">NoSQL</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/gitlab/" style="font-size: 10px;">gitlab</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/iOS/" style="font-size: 10px;">iOS</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a>
 					</div>
 				</section>
 				
@@ -178,6 +178,189 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-CentOS安装EPEL" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/20/CentOS安装EPEL/" class="article-date">
+  	<time datetime="2016-04-20T08:41:59.000Z" itemprop="datePublished">2016-04-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/20/CentOS安装EPEL/">CentOS安装EPEL</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p> wget <a href="http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm" target="_blank" rel="external">http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm</a></p>
+<p> sudo rpm -ivh epel-release-6-8.noarch.rpm</p>
+<p> yum repolist</p>
+<p> vi /etc/yum.repos.d/epel.repo<br>修改文件“/etc/yum.repos.d/epel.repo”， 将baseurl的注释取消， mirrorlist注释掉。即可</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-linux环境搭建wordpress" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/19/linux环境搭建wordpress/" class="article-date">
+  	<time datetime="2016-04-19T03:31:35.000Z" itemprop="datePublished">2016-04-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#Centos 6.5 安装wordpress<br>建议：下载xampp-linux-x64-1.8.3-5-installer.run和 wordpress-4.4.2-zh_CN并上传到linux服务器</p>
+<h2 id="u4F7F_u7528_u547D_u4EE4_u5B89_u88C5_uFF1A"><a href="#u4F7F_u7528_u547D_u4EE4_u5B89_u88C5_uFF1A" class="headerlink" title="使用命令安装："></a>使用命令安装：</h2><pre><code>安装前，需要先给xampp安装包可执行的权限
+chmod 777 xampp-linux-x64-1.8.3-5-installer.run      
+运行 ./xampp-linux-x64-5.6.14-0-installer.run 进行安装操作。
+</code></pre><p>至此，安装步骤就已经完成了  启动xampp：</p>
+<pre><code>#/opt/lampp/lampp start
+</code></pre><p>停止xampp:</p>
+<pre><code>#/opt/lampp/lampp stop
+</code></pre><p>卸载xampp</p>
+<pre><code># /opt/lampp/lampp stop
+# rm -rf /opt/lampp
+</code></pre><p>##</p>
+<h2 id="u8BA9_u5C40_u57DF_u7F51_u5747_u53EF_u8BBF_u95EE"><a href="#u8BA9_u5C40_u57DF_u7F51_u5747_u53EF_u8BBF_u95EE" class="headerlink" title="让局域网均可访问"></a>让局域网均可访问</h2><p>安装完成后，很多时候用locahost来访问时，是没有问题的，但是同一局域网里其它主机用域名访问时，常常不能访问，这里情况大概分为两种：  </p>
+<ol>
+<li><p>xampp的配置文件：/opt/lampp/etc/extra/httpd-xampp.conf中将一下内容屏蔽<br><locationmatch "^="" (?i:(?:xampp|security|licenses|phpmyadmin|webalizer|server-status|server-info))"=""><br>Require local<br>ErrorDocument 403 /error/XAMPP_FORBIDDEN.html.var</locationmatch></p>
+</li>
+<li><p>如果按照以上修改后，还是不能访问，则可能是防火墙把80端口给干掉了，要么把防火墙关闭，要么配置一下80端口允许访问。</p>
+</li>
+<li><p>安装完成后启动XAMPP后台管理<br>进行数据库配置<br>将wordpress目录中的wp-config-sample.php进行数据库配置（正确填写数据库的相关信息）并改名为wp-config.php。</p>
+</li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-关于CocoaPods的问题处理" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/11/关于CocoaPods的问题处理/" class="article-date">
+  	<time datetime="2016-03-11T01:10:33.000Z" itemprop="datePublished">2016-03-11</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/11/关于CocoaPods的问题处理/">关于CocoaPods的问题处理</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-CocoaPods_u5B89_u88C5_u95EE_u9898"><a href="#1-CocoaPods_u5B89_u88C5_u95EE_u9898" class="headerlink" title="1.CocoaPods安装问题"></a>1.CocoaPods安装问题</h1><p>文／姚宁（简书作者）<br>原文链接：<a href="http://www.jianshu.com/p/df61ea673838" target="_blank" rel="external">http://www.jianshu.com/p/df61ea673838</a></p>
+<p>原因：淘宝停止基于 HTTP 协议的镜像服务 需要改用https的协议fix步骤：</p>
+<p>gem sources –remove <a href="http://ruby.taobao.org/" target="_blank" rel="external">http://ruby.taobao.org/</a></p>
+<p>gem sources -a <a href="https://ruby.taobao.org/" target="_blank" rel="external">https://ruby.taobao.org/</a></p>
+<p>gem sources -l</p>
+<p>sudo gem install cocoapods</p>
+<h1 id="2-Pod_Install_u95EE_u9898"><a href="#2-Pod_Install_u95EE_u9898" class="headerlink" title="2.Pod Install问题"></a>2.Pod Install问题</h1><p>1.找不到github.com<br>2.持续Updating local specs repositories</p>
+<p>可选择暂时先不更新本地库。找时间单独执行<br>pod repo update</p>
+<p>从pod install改为<br>pod install –verbose –no-repo-update</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-用gitinspector统计GitLab上的代码" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -621,133 +804,10 @@
 
 
   
-    <article id="post-在Gradle中隐藏Keystore密码" class="article article-type-post" itemscope itemprop="blogPost">
   
-    <div class="article-meta">
-      <a href="/2015/12/23/在Gradle中隐藏Keystore密码/" class="article-date">
-  	<time datetime="2015-12-23T06:19:59.000Z" itemprop="datePublished">2015-12-23</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/12/23/在Gradle中隐藏Keystore密码/">在Gradle中隐藏Keystore密码</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>转载请注明原作者，如果你觉得这篇文章对你有帮助或启发，不用请我喝咖啡:D</strong></p>
-<h2 id="1-_u6DFB_u52A0releaseConfig"><a href="#1-_u6DFB_u52A0releaseConfig" class="headerlink" title="1.添加releaseConfig"></a>1.添加releaseConfig</h2><figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">signingConfigs&#123;</span><br><span class="line">        releaseConfig&#123;</span><br><span class="line">            storeFile file(<span class="string">"mykey.keystore.jks"</span>)</span><br><span class="line">            storePassword <span class="string">"storepwd"</span></span><br><span class="line">            keyAlias <span class="string">"MyApp"</span></span><br><span class="line">            keyPassword <span class="string">"mypwd"</span></span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2015/12/23/在Gradle中隐藏Keystore密码/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Mac-OS-X安装Node-js、npm" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/12/22/Mac-OS-X安装Node-js、npm/" class="article-date">
-  	<time datetime="2015-12-22T06:29:45.000Z" itemprop="datePublished">2015-12-22</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/12/22/Mac-OS-X安装Node-js、npm/">Mac OS X安装Node.js、npm</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>转载请注明原作者，如果你觉得这篇文章对你有帮助或启发，不用请我喝咖啡:D</strong></p>
-<h2 id="u4E00_u3001_u5148_u5B89_u88C5Node-js"><a href="#u4E00_u3001_u5148_u5B89_u88C5Node-js" class="headerlink" title="一、先安装Node.js"></a>一、先安装Node.js</h2><ol>
-<li>下载node.js的pkg。</li>
-<li>按照官网上编写并保存example.js。</li>
-<li>打开终端 路径浏览到example.js所在位置。</li>
-<li>可以用官网上的简单例子跑hello world服务的那个，输入命令 node看看有没有安装成功。 </li>
-</ol>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac/">Mac</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2015/12/22/Mac-OS-X安装Node-js、npm/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 </div>
       <footer id="footer">
